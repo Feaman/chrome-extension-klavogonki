@@ -1,0 +1,35 @@
+{
+  "name": "Klavogonki tools",
+  "version": "0.2",
+  "description": "Klavogonki tools",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "background",
+    "storage"
+  ],
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "js": ["js/main.js"],
+      "css": ["css/styles.css"],
+      "matches": ["http://klavogonki.ru/*", "https://klavogonki.ru/*"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png"
+    }
+  },
+  "icons": {
+  	"16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "manifest_version": 2
+}
